@@ -1,0 +1,35 @@
+{
+    "name": "aether-prompter",
+    "description": "Base Level Extension",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": ["storage", "commands", "activeTab"],
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["utils/content.js", "contentScript.js"]
+    },
+    {
+      "matches": ["https://t3.chat/*"],
+      "js": ["utils/t3chat-content.js"],
+      "run_at": "document_idle"
+    }],
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": "images/aether_logo_white_bg.png"
+    },
+    "commands": {
+      "_execute_action": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+A",
+          "mac": "Command+Shift+A"
+        },
+        "description": "Open Aether Prompter"
+      }
+    },
+    "icons": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+}

@@ -1,0 +1,13 @@
+.env
+config.js
+node_modules
+.DS_Store
+.gitattributes copy
+dist/
+*.log
+.env.*
+.vscode/
+.idea/
+coverage/
+*~
+*.swp
